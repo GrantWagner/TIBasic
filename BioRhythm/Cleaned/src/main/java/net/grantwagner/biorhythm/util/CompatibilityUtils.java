@@ -9,6 +9,9 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
+import lombok.experimental.UtilityClass;
+
+@UtilityClass
 public class CompatibilityUtils {
 
   private static PrintWriter out;
@@ -63,6 +66,16 @@ public class CompatibilityUtils {
           throw new NoSuchElementException("attempts to read a 'char' value from standard input, "
                                          + "but no more tokens are available");
       }
+  }
+
+  /**
+   * Reads and returns the next character.
+   *
+   * @return the next {@code char}
+   * @throws NoSuchElementException if standard input is empty
+   */
+  public static String readLine() {
+    return scanner.nextLine();
   }
 
   /**
